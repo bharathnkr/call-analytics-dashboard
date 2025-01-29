@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - NY Mets Call Analytics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="static/img/ny-mets-logo.svg" alt="NY Mets Logo" height="40" class="me-2">
+                <span>Call Analytics Dashboard</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Call Evaluation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sales-tracking.html">Sales Tracking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="retention-tracking.html">STM Retention</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid px-4">
+        <!-- Filters Section -->
+        <div class="filters-section mb-4">
+            <div class="row">
+                <div class="col-md-3">
+                    <label class="form-label">Team</label>
+                    <select class="form-select" id="teamFilter">
+                        <option value="all">All Teams</option>
+                        <option value="ticket">Ticket Service</option>
+                        <option value="retention">Retention</option>
+                        <option value="sales">Sales</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Customer Type</label>
+                    <select class="form-select" id="customerTypeFilter">
+                        <option value="all">All Types</option>
+                        <option value="premium">Premium</option>
+                        <option value="non-premium">Non-Premium</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Date Range</label>
+                    <select class="form-select" id="dateRangeFilter">
+                        <option value="today">Today</option>
+                        <option value="yesterday">Yesterday</option>
+                        <option value="last7">Last 7 Days</option>
+                        <option value="last30">Last 30 Days</option>
+                        <option value="thisMonth">This Month</option>
+                        <option value="lastMonth">Last Month</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+                <div class="col-md-3" id="customDateContainer" style="display: none;">
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="form-label">Start Date</label>
+                            <input type="date" class="form-control" id="startDate">
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">End Date</label>
+                            <input type="date" class="form-control" id="endDate">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <label class="form-label">Game Period</label>
+                    <select class="form-select" id="gamePeriodFilter">
+                        <option value="all">All Periods</option>
+                        <option value="preGame">Pre-Game</option>
+                        <option value="gameDay">Game Day</option>
+                        <option value="postGame">Post-Game</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Season</label>
+                    <select class="form-select" id="seasonFilter">
+                        <option value="2025">2025 Season</option>
+                        <option value="2024">2024 Season</option>
+                        <option value="2023">2023 Season</option>
+                    </select>
+                </div>
+                <div class="col-md-6 d-flex align-items-end">
+                    <button class="btn btn-primary" id="applyFilters">
+                        <i class="fas fa-filter me-2"></i>Apply Filters
+                    </button>
+                    <button class="btn btn-outline-secondary ms-2" id="resetFilters">
+                        <i class="fas fa-undo me-2"></i>Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- KPIs Section -->
+        <div class="row mb-4">
+            <div class="col-md-2">
+                <div class="kpi-card">
+                    <h6>Total Calls</h6>
+                    <div id="totalCalls" class="kpi-value">1,234</div>
+                    <div class="trend up"><i class="fas fa-arrow-up"></i> 5%</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="kpi-card">
+                    <h6>Resolved Calls</h6>
+                    <div id="resolvedCalls" class="kpi-value">1,052</div>
+                    <div class="trend up"><i class="fas fa-arrow-up"></i> 8%</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="kpi-card">
+                    <h6>Unresolved Calls</h6>
+                    <div id="unresolvedCalls" class="kpi-value">182</div>
+                    <div class="trend down"><i class="fas fa-arrow-down"></i> 3%</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="kpi-card">
+                    <h6>Avg Call Duration</h6>
+                    <div id="avgDuration" class="kpi-value">8:45</div>
+                    <div class="trend neutral"><i class="fas fa-minus"></i></div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="kpi-card">
+                    <h6>Agent Performance</h6>
+                    <div id="agentPerformance" class="kpi-value">85%</div>
+                    <div class="trend up"><i class="fas fa-arrow-up"></i> 2%</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="kpi-card">
+                    <h6>Fan Sentiment</h6>
+                    <div id="fanSentiment" class="kpi-value">4.2/5</div>
+                    <div class="trend up"><i class="fas fa-arrow-up"></i> 4%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="row">
+            <!-- Call Reasons -->
+            <div class="col-md-6 mb-4">
+                <div class="chart-card">
+                    <h5>Top Call Reasons</h5>
+                    <canvas id="callReasons"></canvas>
+                </div>
+            </div>
+            <!-- Sentiment Analysis -->
+            <div class="col-md-6 mb-4">
+                <div class="chart-card">
+                    <h5>Fan Sentiment Distribution</h5>
+                    <canvas id="sentimentDistribution"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Rep Performance -->
+            <div class="col-md-4 mb-4">
+                <div class="chart-card">
+                    <h5>Rep Performance Distribution</h5>
+                    <canvas id="repPerformance"></canvas>
+                </div>
+            </div>
+            <!-- Customer Preferences -->
+            <div class="col-md-4 mb-4">
+                <div class="chart-card">
+                    <h5>Emerging Fan Preferences</h5>
+                    <canvas id="customerPreferences"></canvas>
+                </div>
+            </div>
+            <!-- Operational Issues -->
+            <div class="col-md-4 mb-4">
+                <div class="chart-card">
+                    <h5>Recurring Operational Issues</h5>
+                    <canvas id="operationalIssues"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/mock-data.js"></script>
+    <script src="static/js/dashboard.js"></script>
+</body>
+</html>

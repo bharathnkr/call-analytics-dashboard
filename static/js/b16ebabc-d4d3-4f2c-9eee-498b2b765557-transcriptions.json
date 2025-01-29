@@ -1,0 +1,173 @@
+{
+  "timestamp": "2024-11-29T03:02:28.549Z",
+  "turns": [{
+    "order": 1,
+    "participantType": "Agent",
+    "startOffset": 7680,
+    "endOffset": 13800,
+    "words": "hello thank you for calling premier bank my name is taylor how can i assist you today"
+  }, {
+    "order": 2,
+    "participantType": "Customer",
+    "startOffset": 15360,
+    "endOffset": 23460,
+    "words": "hi taylor my name is jordan i'm upset about a recent overdraft fee i received on my checking account and was wondering if it could be waived"
+  }, {
+    "order": 3,
+    "participantType": "Agent",
+    "startOffset": 24960,
+    "endOffset": 35460,
+    "words": "i'm more than happy to assist you could you please provide me with your six digit pin or date of birth so i can have access to your account and investigate this matter for you"
+  }, {
+    "order": 4,
+    "participantType": "Customer",
+    "startOffset": 37120,
+    "endOffset": 40720,
+    "words": "sure my pin is XXX XXX XXXXX XXXX XXXX XXX"
+  }, {
+    "order": 5,
+    "participantType": "Agent",
+    "startOffset": 41600,
+    "endOffset": 69080,
+    "words": "thank you for helping me keep your account secure i see that you got charged an overdraft fee of thirty four dollars and the reason was insufficient funds or negative balance since you've been a valued customer with premier bank since two thousand and six and have a top tier checking account and this is also the first time you've encountered an overdraft fee i can go ahead and waive the thirty four dollar fee as a one time courtesy"
+  }, {
+    "order": 6,
+    "participantType": "Customer",
+    "startOffset": 69120,
+    "endOffset": 73520,
+    "words": "that would be greatly appreciated thank you for understanding taylor"
+  }, {
+    "order": 7,
+    "participantType": "Agent",
+    "startOffset": 72320,
+    "endOffset": 79340,
+    "words": "i'm glad i could assist you with that would you like the refund credited back into your account"
+  }, {
+    "order": 8,
+    "participantType": "Customer",
+    "startOffset": 80000,
+    "endOffset": 92540,
+    "words": "no i'm out of town in stratford cash could i receive the money by check i'm staying with a friend their address is one two three main street any town u s a"
+  }, {
+    "order": 9,
+    "participantType": "Agent",
+    "startOffset": 93440,
+    "endOffset": 116890,
+    "words": "we can do that for you jordan however because this is not a regular reimbursement method and to maintain account security we will need an extra layer of authentication we have five choices available such as one time password by text or email the authentication application set up with your account voice authentication or i can call you back on the phone number we have on your account if you're calling from a landline how would you prefer to authenticate your account today"
+  }, {
+    "order": 10,
+    "participantType": "Customer",
+    "startOffset": 118120,
+    "endOffset": 120220,
+    "words": "i'll take the text option please"
+  }, {
+    "order": 11,
+    "participantType": "Agent",
+    "startOffset": 120320,
+    "endOffset": 128240,
+    "words": "no problem i have gone ahead and sent that text go ahead and read off your six digit password whenever you're ready"
+  }, {
+    "order": 12,
+    "participantType": "Customer",
+    "startOffset": 129440,
+    "endOffset": 132440,
+    "words": "six five four three two one"
+  }, {
+    "order": 13,
+    "participantType": "Agent",
+    "startOffset": 131200,
+    "endOffset": 144530,
+    "words": "all right your account has been authenticated you stated that the address you want to the check to be sent is one two three main street any town u s a"
+  }, {
+    "order": 14,
+    "participantType": "Customer",
+    "startOffset": 143360,
+    "endOffset": 146510,
+    "words": "yes that's right"
+  }, {
+    "order": 15,
+    "participantType": "Agent",
+    "startOffset": 147840,
+    "endOffset": 164580,
+    "words": "great you can expect a check in the mail within the next three or five business days just to let you know there is a way to avoid overdraft fees if you have a premier savings account linked to your checking account i can help you open a savings account now if you'd like"
+  }, {
+    "order": 16,
+    "participantType": "Customer",
+    "startOffset": 165240,
+    "endOffset": 166840,
+    "words": "could i do that later"
+  }, {
+    "order": 17,
+    "participantType": "Agent",
+    "startOffset": 167040,
+    "endOffset": 176490,
+    "words": "sure no problem jordan i can send you a text to the number we have on file with the instructions on how you can create an account on your own when you have some time"
+  }, {
+    "order": 18,
+    "participantType": "Customer",
+    "startOffset": 175360,
+    "endOffset": 179770,
+    "words": "sounds good i really appreciate your support"
+  }, {
+    "order": 19,
+    "participantType": "Agent",
+    "startOffset": 180480,
+    "endOffset": 205330,
+    "words": "no problem the text containing the information on how to open your savings account and link it to your checking account has been sent jordan as you have taken the time to call us today would you be interested in a great promotion happening with our credit cards we have a great offer to upgrade to our premier special or select card with amazing introductory bonuses would you like for me to send you information so that you can learn more about these great offers"
+  }, {
+    "order": 20,
+    "participantType": "Customer",
+    "startOffset": 204160,
+    "endOffset": 211720,
+    "words": "that's great i'd love for you to send that to me i've been thinking of upgrading my card"
+  }, {
+    "order": 21,
+    "participantType": "Agent",
+    "startOffset": 211200,
+    "endOffset": 223450,
+    "words": "okay great i just sent you a link that compares our two promotions the premier select card and the premier special card please review their information and let me know if you have any questions"
+  }, {
+    "order": 22,
+    "participantType": "Customer",
+    "startOffset": 225920,
+    "endOffset": 234110,
+    "words": "seeing them side by side i think i'd like to get the premier special i like the zero dollar introductory offer"
+  }, {
+    "order": 23,
+    "participantType": "Agent",
+    "startOffset": 234880,
+    "endOffset": 246350,
+    "words": "that is a great choice jordan go ahead and select the card and review the contract let me know once you have clicked on the i accept button or if you have any questions regarding the contract"
+  }, {
+    "order": 24,
+    "participantType": "Customer",
+    "startOffset": 248320,
+    "endOffset": 250120,
+    "words": "no questions over here i accept"
+  }, {
+    "order": 25,
+    "participantType": "Agent",
+    "startOffset": 250240,
+    "endOffset": 261640,
+    "words": "wonderful your card has been updated in your account you can expect to receive your new card in the mail within the next three to five business days is there anything else i can do for you today"
+  }, {
+    "order": 26,
+    "participantType": "Customer",
+    "startOffset": 261760,
+    "endOffset": 265680,
+    "words": "no that's everything thanks again for your help"
+  }, {
+    "order": 27,
+    "participantType": "Agent",
+    "startOffset": 265600,
+    "endOffset": 275680,
+    "words": "you're very welcome thank you for calling premier bank there is a brief survey after this call i would greatly appreciate it if you would take the time to fill it out have a great day"
+  }, {
+    "order": 28,
+    "participantType": "Customer",
+    "startOffset": 273920,
+    "endOffset": 277430,
+    "words": "will do bye"
+  }],
+  "lang": "en-us"
+}
